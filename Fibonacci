@@ -1,0 +1,27 @@
+import java.util.*;
+public class Main
+{
+    public static void fib(int x, int y , int z){
+        int n =1;
+        while(n!=0){
+            int temp=y;
+            y = x + y;
+            x = temp;
+            if(y<=z){
+                System.out.print(y+ " ");
+            }
+            else{
+                n=0;
+            }
+        }
+        return ;
+    }
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int low = sc.nextInt();
+	    int high = sc.nextInt();
+	    int end = sc.nextInt();
+	    System.out.print(low + " " + high + " ");
+	    fib(low,high,end);
+	}
+}
