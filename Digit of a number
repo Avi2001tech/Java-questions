@@ -1,0 +1,19 @@
+import java.util.*;
+public class Main
+{
+    public static void digit(int x){
+        //int count =0;
+        while(x!= 0){
+            System.out.println(x%10);
+            //count++;
+            x=x/10;
+        }
+        return ;
+    }
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int num = sc.nextInt();
+	    digit(num);
+		//System.out.println(result);
+	}
+}
