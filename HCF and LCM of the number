@@ -1,0 +1,92 @@
+import java.util.*;
+public class Main
+{
+    //The HCF function
+    public static int HCF(int x, int y){
+        if(x<y){
+            while(x!=0){
+            int temp=x;
+            x=y%x;
+            y = temp;
+            }
+        return y;
+        }
+        else{
+            while(y!=0){
+            int temp=y;
+            y=x%y;
+            x = temp;
+        }
+        return x;
+        }
+    }
+    
+    //The LCM function
+    public static int LCM(int x, int y){
+        int result=1;
+        if(x<y){
+            int i=2;
+            while(i<=x){
+                if((x%i==0)&&(y%i==0)){
+                    x=x/i;
+                    y=y/i;
+                    result=result*i;
+                    continue;
+                }
+                else{
+                    i++;
+                }
+            }
+            result = result*x*y;
+            return result;
+            //System.out.println("The LCM of "+ x +"&" + y +"is :" + result);
+        }
+        else if(x==y){
+            return x;
+            //System.out.println("The LCM of "+ x +"&" + y +"is :" + x);
+        }
+        else{
+            int i=2;
+            while(i<=y){
+                if((x%i==0)&&(y%i==0)){
+                    x=x/i;
+                    y=y/i;
+                    result=result*i;
+                    continue;
+                }
+                else{
+                    i++;
+                }
+            }
+            result = result*x*y;
+            return result;
+            //System.out.println("The LCM of "+ x +"&" + y +"is :" + result);
+        }
+        //return 0;
+    }
+    
+    
+    //The main function
+	public static void main(String[] args) {
+	    System.out.println("Enter the two numbers: ");
+	    Scanner sc = new Scanner(System.in);
+	    int num1= sc.nextInt();
+	    int num2 = sc.nextInt();
+	    System.out.println("Choose 1 for HCF and 2 for LCM .");
+	    int opt = sc.nextInt();
+	    if(opt==1){
+	        int res =HCF(num1 , num2);
+	        System.out.println("The HCF of "+ num1 +" & " + num2 +" is : " + res);
+	   }
+	   else if(opt==2){
+	        int res = LCM(num1,num2);
+	        System.out.println("The LCM of "+ num1 +" & " + num2 +" is : " + res);
+	   }
+	   else{
+	        System.out.println("Select between 1 and 2:");
+	   }
+	        
+	    
+		//System.out.println("Hello World");
+	}
+}
